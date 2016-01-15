@@ -1,0 +1,7 @@
+/* Normalize the focus style to almost perfectly match Chrome on OS X. */
+:focus {
+	border-radius: 1px;
+	box-shadow: 0 0 0 1px #d4e4ff,
+        0 0 0 3px #8dbafc,
+		0 0 0 4px #d4e4ff;
+}
