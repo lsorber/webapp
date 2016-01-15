@@ -1,7 +1,7 @@
 /* Normalize the focus style to almost perfectly match Chrome on OS X. */
 :focus {
     border-radius: 1px;
-    box-shadow: 0 0 0 1px #d4e4ff,
-        0 0 0 3px #8dbafc,
-        0 0 0 4px #d4e4ff;
+    box-shadow: 0 0 0 1px rgba(57, 153, 255, 0.25) inset,
+        0 0 0 2px rgba(57, 153, 255, 0.40),
+        0 0 0 3px rgba(57, 153, 255, 0.25);
 }
