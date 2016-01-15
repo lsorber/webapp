@@ -1,4 +1,9 @@
-/* Normalize the focus style to almost perfectly match Chrome on OS X. */
+body {
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Normalize the focus style to match Chrome on OS X. */
 :focus {
     border-radius: 1px;
     box-shadow: 0 0 0 1px rgba(57, 153, 255, 0.25) inset,
