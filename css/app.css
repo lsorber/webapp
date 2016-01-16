@@ -4,18 +4,8 @@ body {
     color: #222;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
-    line-height: 1.3;
 }
 
-/* Normalize the focus style to match Chrome on OS X. */
-:focus {
-    border-radius: 1px;
-    box-shadow: inset 0 0 0 1px rgba(57, 153, 255, 0.25),
-        0 0 0 2px rgba(57, 153, 255, 0.40),
-        0 0 0 3px rgba(57, 153, 255, 0.25);
-}
-
-/* Normalize button style to an OS X-like chiclet keyboard. */
 button, button:focus {
     color: rgba(0,0,0,0.66);
     text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.9);
@@ -32,25 +22,29 @@ button, button:focus {
         0 3px 0 #c9c9c9,
         0 3px 3px #333;
 }
+
 button:disabled {
     color: rgba(0,0,0,0.35);
 }
+
 button::selection {
     color: white;
     background: #5af;
     text-shadow: none;
 }
-button:hover:enabled {
+
+button:enabled:hover {
     margin: 3px 1px 5px 1px;
     box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.05),
         0 1px 0 #c3c3c3,
         0 2px 0 #c6c6c6,
         0 2px 3px #333;
 }
-button:active:enabled {
+
+button:enabled:active {
     background: #ebeced;
     margin: 5px 1px 3px 1px;
     box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.12),
-      0 0 3px #333;
+        0 0 3px #333;
     border-top-color: #eee;
 }
