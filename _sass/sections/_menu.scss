@@ -1,0 +1,99 @@
+/* Investimize logo.
+   
+   Accompanying HTML:
+        <i class="logo"></i>
+        <i class="brandname"></i>
+        <i class="logo brandname"></i>
+*/
+
+i {
+
+    &.inverse {
+        color: $text-color-inv;
+    }
+
+    &.logo::before {
+        content: '';
+        width: 0.7em;
+        height: 1.1em;
+        display: inline-block;
+        vertical-align: -0.2em;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-image: url('../images/brand-logo.svg');
+    }
+
+    &.logo.inverse::before {
+        background-image: url('../images/brand-logo-inv.svg');
+    }
+
+    &.brandname {
+        font-family: 'Gudea', sans-serif;
+        letter-spacing: -0.015em;
+        font-weight: bold;
+        font-style: normal;
+        white-space: nowrap;
+        color: #00D1AE;
+        background: -webkit-linear-gradient(-45deg, #00D1AE 0%, #00DB71 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &.logo.brandname::before {
+        margin-right: 0.25em;
+    }
+
+}
+
+div.brand {
+
+    a {
+        display: inline-block;
+        padding: 1vw 0;
+        font-size: 2em;
+    }
+
+}
+
+/* Menu. */
+
+div.menubar {
+
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 5px 0 rgba(0,0,0,0.06), 0 1px 10px 0 rgba(0,0,0,0.08);
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    z-index: 999;
+
+}
+
+div.menu {
+
+    background-color: rgba(0, 0, 0, 0.14);
+    
+    a {
+
+        display: block;
+        white-space: nowrap;
+        padding: 0.5em;
+
+        &:hover {
+        }
+
+    }
+
+}
+
+@media #{$tablet-and-up}, print {
+    div.menu {
+
+        display: flex;
+        justify-content: flex-end;
+
+        a:not(:first-child) {
+            margin-left: 2vw;
+        }
+
+    }
+}

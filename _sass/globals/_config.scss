@@ -1,0 +1,68 @@
+/* Device breakpoints.
+
+   Starting at `tablet-and-up`, the grid will transform into a columnar layout.
+   Starting at `laptop-and-up`, the webapp will scale to accommodate a larger
+   presumed viewing distance. According to [1], the iPhone 6 Plus has a width
+   of 736px in landscape mode, which is the largest in the smartphone category.
+   Excluding laptop-sized tablets such as the iPad Pro 12.9 and the Microsoft
+   Surface, the largest tablet resolutions go up to 1280px.
+
+   [1] http://mydevice.io/devices/
+*/
+
+// Common device widths.
+$mobile-s: 320px; // E.g., iPhone 4, iPhone 5.
+$mobile-m: 375px; // E.g., iPhone 6.
+$mobile-l: 414px; // E.g., iPhone 6 Plus.
+$tablet: 737px;   // Tablet breakpoint.
+$ipad: 768px;     // E.g., iPad (other).
+$ipadpro: 1024px; // E.g., iPad Pro 12.9.
+$laptop: 1281px;  // Laptop breakpoint.
+$desktop: 1920px;
+$fourk: 2560px;
+
+// Breakpoints.
+$tablet-and-up: "screen and (min-width: #{$tablet}), print";
+$laptop-and-up: "screen and (min-width: #{$laptop})";
+
+/* Colours. */
+
+// Brand colours.
+$brand-color: mix(#00D1AE, #00DB71, 50%);
+$brand-color-alt: $brand-color;
+
+// Dark-on-light fore- and background colours, and alternatives.
+$fg-color: #212121;
+$bg-color: white;
+$fg-color-alt: $fg-color;
+$bg-color-alt: #f2f2f2;
+
+// Light-on-dark fore- and background colours, and alternatives.
+$fg-color-inv: white;
+$bg-color-inv: $brand-color;
+$fg-color-inv-alt: $fg-color-inv;
+$bg-color-inv-alt: $brand-color-alt;
+
+// Text colours.
+$text-color: $fg-color;
+$text-background: $bg-color;
+$text-color-inv: $fg-color-inv;
+$text-background-inv: $bg-color-inv;
+
+// Code colours.
+$code-color: $fg-color;
+$code-background: #f5f2f0;
+
+/* Typography. */
+
+$text-family: 'Roboto', 'San Fransisco', 'Helvetica Neue', 'Calibri Light', sans-serif;
+$text-size: 1.8rem; 
+$text-line-height: 1.5;
+$text-size-laptop-and-up: 2.1rem;
+$text-line-height-laptop-and-up: 1.58;
+$text-weight-normal: 300;
+$text-weight-bold: 500;
+
+/* Scaling. */
+
+$scale-step: 1.25;

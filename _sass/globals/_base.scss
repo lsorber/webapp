@@ -1,0 +1,58 @@
+/* Remove 300ms click delay on Chrome, Firefox and IE [1]. Add the below to
+   your <head> to disable the click delay for iOS 9.3+ and other modern
+   browsers [1,2,3] as well as enable GPU rasterization in Chrome [4].
+
+        <meta name="viewport"
+            content="width=device-width,minimum-scale=1,initial-scale=1">
+
+   [1] http://developer.telerik.com/featured/300-ms-click-delay-ios-8/
+   [2] https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away
+   [3] http://patrickhlauke.github.io/touch/tests/results/
+   [4] https://www.chromium.org/developers/design-documents/chromium-graphics/how-to-get-gpu-rasterization
+*/
+
+a, button, label {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+/* Typography and scaling. We set the root `font-size` to a percentage so that
+   the site will scale according to the browser's font size, and to 62.5%
+   specifically so that 1rem corresponds to 10px under the default browser font
+   size of 16px. Additionally, we scale the root `font-size` on the
+   `laptop-and-up` breakpoint so that the entire site scales according with the
+   updated value of 1rem.
+*/
+
+html {
+
+    font-size: 62.5%;
+    font-family: $text-family;
+    font-weight: $text-weight-normal;
+    line-height: $text-line-height;
+    color: $text-color;
+    background: $text-background;
+    
+    @media #{$laptop-and-up} {
+        line-height: $text-line-height-laptop-and-up;
+        font-size: ($text-size-laptop-and-up / $text-size) * 62.5%;
+    }
+
+}
+
+body {
+    font-size: $text-size;
+}
+
+h1, h2, h3 {
+    font-weight: $text-weight-bold;
+}
+
+h4, h5, h6 {
+    font-weight: $text-weight-normal;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}

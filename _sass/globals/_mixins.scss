@@ -1,0 +1,29 @@
+@mixin display-flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($flex-grow: 0, $flex-shrink: 1, $flex-basis: auto) {
+    -webkit-box-flex: $flex-grow $flex-shrink $flex-basis;
+    -moz-box-flex: $flex-grow $flex-shrink $flex-basis;
+    -ms-flex: $flex-grow $flex-shrink $flex-basis;
+    -webkit-flex: $flex-grow $flex-shrink $flex-basis;
+    flex: $flex-grow $flex-shrink $flex-basis;
+}
+
+@function pow($number, $exponent) {
+    $value: 1;
+    @if $exponent > 0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $number;
+        }
+    } @else if $exponent < 0 {
+        @for $i from 1 through -$exponent {
+            $value: $value / $number;
+        }
+    }
+    @return $value;
+}

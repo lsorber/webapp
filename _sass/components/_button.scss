@@ -1,0 +1,16 @@
+$button-padding: 0.5em 0.8em !default;
+$button-border-radius: 4px !default;
+
+.button {
+    display: inline-block;
+    padding: $button-padding;
+    background: $text-background;
+    border: 1px solid $text-background-inv;
+    border-radius: $button-border-radius;
+    color: $text-color;
+}
+
+.button:hover {
+    background: $text-background-inv;
+    color: $text-color-inv;
+}
