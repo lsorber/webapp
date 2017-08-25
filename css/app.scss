@@ -2,9 +2,11 @@
 ---
 
 @import "libraries/normalize",
+        "libraries/simplebar",
         "globals/config",
         "globals/mixins",
         "globals/base",
         "globals/grid",
+        "components/logo",
         "components/button",
         "sections/menu";

@@ -16,12 +16,42 @@ a, button, label {
     touch-action: manipulation;
 }
 
-/* Typography and scaling. We set the root `font-size` to a percentage so that
-   the site will scale according to the browser's font size, and to 62.5%
-   specifically so that 1rem corresponds to 10px under the default browser font
-   size of 16px. Additionally, we scale the root `font-size` on the
-   `laptop-and-up` breakpoint so that the entire site scales according with the
-   updated value of 1rem.
+/* Device breakpoints.
+
+   Starting at `tablet-and-up`, the grid will transform into a columnar layout.
+   Starting at `laptop-and-up`, the webapp will scale to accommodate a larger
+   presumed viewing distance. According to [1], the iPhone 6 Plus has a width
+   of 736px in landscape mode, which is the largest in the smartphone category.
+   Excluding laptop-sized tablets such as the iPad Pro 12.9 and the Microsoft
+   Surface, the largest tablet resolutions go up to 1280px.
+
+   [1] http://mydevice.io/devices/
+*/
+
+// Common device widths.
+$mobile-s: 320px; // E.g., iPhone 4, iPhone 5.
+$mobile-m: 375px; // E.g., iPhone 6.
+$mobile-l: 414px; // E.g., iPhone 6 Plus.
+$tablet: 737px;   // Tablet breakpoint.
+$ipad: 768px;     // E.g., iPad (other).
+$ipadpro: 1024px; // E.g., iPad Pro 12.9.
+$laptop: 1281px;  // Laptop breakpoint.
+$desktop: 1920px;
+$fourk: 2560px;
+
+// Breakpoints.
+$up-to-tablet: "screen and (max-width: #{$tablet - 1px})";
+$tablet-and-up: "screen and (min-width: #{$tablet}), print";
+$laptop-and-up: "screen and (min-width: #{$laptop})";
+
+/* Typography and scaling.
+
+   We set the root `font-size` to a percentage so that the site will scale
+   according to the browser's font size, and to 62.5% specifically so that 1rem
+   corresponds to 10px under the default browser font size of 16px.
+   Additionally, we scale the root `font-size` on the `laptop-and-up`
+   breakpoint so that the entire site scales according with the updated value
+   of 1rem.
 */
 
 html {

@@ -1,0 +1,47 @@
+/* Webapp logo.
+   
+   Accompanying HTML:
+        <a href="#" class="logo"></a>
+        <a href="#" class="brandname">#{$brand}</a>
+        <a href="#" class="logo brandname">#{$brand}</a>
+*/
+
+/* Default logo configuration. */
+
+// Brand markup.
+$brand-letter-spacing: -0.015em !default;
+$brand-weight: $text-weight-bold !default;
+
+// Logo markup.
+$logo-height: 1.2em !default;
+$logo-width: 1.2em !default;
+$logo-separator: 0.2em !default;
+$logo-image: inline-svg('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" x="0px" y="0px" viewBox="0 0 48 48"><circle fill="#{$brand-color}" cx="24" cy="24" r="21"></circle><polygon fill="#{$brand-color-alt}" points="24,11 27.9,18.9 36.6,20.2 30.3,26.3 31.8,35 24,30.9 16.2,35 17.7,26.3 11.4,20.2 20.1,18.9 "></polygon></svg>') !default;
+
+/* Logo and brandname. */
+
+.logo::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-image: $logo-image;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: $logo-height;
+    width: $logo-width;
+    margin-top: -$logo-height / 2;
+}
+
+.brandname {
+    white-space: nowrap;
+    letter-spacing: $brand-letter-spacing;
+    font-weight: $brand-weight;
+}
+
+.logo.brandname {
+    position: relative;
+    padding-left: $logo-width + $logo-separator;
+}
